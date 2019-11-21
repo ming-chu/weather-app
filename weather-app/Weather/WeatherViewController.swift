@@ -11,6 +11,16 @@
 import UIKit
 
 class WeatherViewController: UIViewController {
+    
+    @IBOutlet private weak var searchBar: UISearchBar?
+    @IBOutlet private weak var weatherWidgetView: UIView?
+    @IBOutlet private weak var cityNameLabel: UILabel?
+    @IBOutlet private weak var weatherDescriptionLabel: UILabel?
+    @IBOutlet private weak var weatherIconImageView: UIImageView?
+    @IBOutlet private weak var temperatureLabel: UILabel?
+    @IBOutlet private weak var windValueLabel: UILabel?
+    @IBOutlet private weak var humidityValueLabel: UILabel?
+    @IBOutlet private weak var pressureValueLabel: UILabel?
 
 	var presenter: WeatherPresenterProtocol?
 
