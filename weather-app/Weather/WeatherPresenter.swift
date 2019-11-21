@@ -29,8 +29,9 @@ class WeatherPresenter: WeatherPresenterProtocol {
 }
 
 extension WeatherPresenter: WeatherInteractorOutputProtocol {
-    func fetchCurrentWeatherDidSuccess(data: Any) {
-        view?.updateCurrentWeather()
+    func fetchCurrentWeatherDidSuccess(weatherResponse: WeatherResponse) {
+        let viewModel = WeatherViewModel(weatherResponse: weatherResponse)
+        view?.updateCurrentWeather(viewModel: viewModel)
     }
 
     func fetchCurrentWeatherDidFailed(error: Error?) {

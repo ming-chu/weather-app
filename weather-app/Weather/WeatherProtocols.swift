@@ -26,7 +26,7 @@ protocol WeatherPresenterProtocol: class {
 protocol WeatherInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
-    func fetchCurrentWeatherDidSuccess(data: Any)
+    func fetchCurrentWeatherDidSuccess(weatherResponse: WeatherResponse)
     func fetchCurrentWeatherDidFailed(error: Error?)
 }
 
@@ -44,6 +44,6 @@ protocol WeatherViewProtocol: class {
     var presenter: WeatherPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
-    func updateCurrentWeather()
+    func updateCurrentWeather(viewModel: WeatherViewModelProtocol)
     func showError(errorMessage: String)
 }

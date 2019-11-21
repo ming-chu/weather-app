@@ -26,13 +26,30 @@ class WeatherViewController: UIViewController {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.setInterface(viewModel: nil)
+        self.presenter?.requestCurrentWeather(keyword: "Hong Kong")
     }
+
+    private func setInterface(viewModel: WeatherViewModelProtocol?) {
+        self.cityNameLabel?.text = viewModel?.cityName
+        self.weatherDescriptionLabel?.text = viewModel?.weatherDescription
+        self.temperatureLabel?.text = viewModel?.temperature
+        self.windValueLabel?.text = viewModel?.windSpeed
+        self.humidityValueLabel?.text = viewModel?.humidity
+        self.pressureValueLabel?.text = viewModel?.pressure
+        //TODO:
+        self.weatherIconImageView?.image = nil
+        self.weatherWidgetView?.isHidden = viewModel == nil
+    }
+
 
 }
 
 extension WeatherViewController: WeatherViewProtocol {
-    func updateCurrentWeather() {
-        //TODO: update UI
+    func updateCurrentWeather(viewModel: WeatherViewModelProtocol) {
+        // Update UI
+        self.setInterface(viewModel: viewModel)
     }
 
     func showError(errorMessage: String) {

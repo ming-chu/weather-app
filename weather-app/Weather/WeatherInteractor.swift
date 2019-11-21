@@ -21,42 +21,16 @@ class WeatherInteractor: WeatherInteractorInputProtocol {
         //api.openweathermap.org/data/2.5/weather?zip={zip code}
         //api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}
 
-        presenter?.fetchCurrentWeatherDidSuccess(data: "TODO:")
+        WebServiceManager.shared.request(params: queryType.params, completion: handler)
     }
 
-}
-
-
-
-//TODO: move it to WebService later
-enum QueryType {
-    /**
-    get weather by ZIP code
-
-    Examples of API calls:
-    ```
-    api.openweathermap.org/data/2.5/weather?q=London
-    ```
-     */
-    case cityName(name: String)
-
-    /**
-    get weather by ZIP code
-
-    Examples of API calls:
-    ```
-    api.openweathermap.org/data/2.5/weather?zip=94040
-    ```
-     */
-    case zipCode(code: Int)
-
-    /**
-    get weather by geographic coordinates
-
-    Examples of API calls:
-    ```
-    api.openweathermap.org/data/2.5/weather?lat=35&lon=139
-    ```
-     */
-    case coordinates(lat: Double, lon: Double)
+    private var handler: WebServiceCompletionHandler<WeatherResponse> {
+        return { [weak self] (response, error) in
+            if let error = error {
+                self?.presenter?.fetchCurrentWeatherDidFailed(error: error)
+            } else if let response = response {
+                self?.presenter?.fetchCurrentWeatherDidSuccess(weatherResponse: response)
+            }
+        }
+    }
 }
