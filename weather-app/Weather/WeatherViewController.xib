@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WeatherViewController">
             <connections>
                 <outlet property="cityNameLabel" destination="Mfx-TE-bUo" id="Y3U-Ee-pEh"/>
+                <outlet property="datetimeLable" destination="wyz-np-xDZ" id="Dhm-XR-VO8"/>
                 <outlet property="humidityValueLabel" destination="X6J-hU-yxO" id="R6c-sO-Qkv"/>
                 <outlet property="pressureValueLabel" destination="9He-bO-cBo" id="ozX-BX-r28"/>
                 <outlet property="searchBar" destination="ra1-Q6-lJj" id="nc5-Lv-YA9"/>

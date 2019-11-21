@@ -21,8 +21,9 @@ class WeatherViewController: UIViewController {
     @IBOutlet private weak var windValueLabel: UILabel?
     @IBOutlet private weak var humidityValueLabel: UILabel?
     @IBOutlet private weak var pressureValueLabel: UILabel?
+    @IBOutlet private weak var datetimeLable: UILabel?
 
-	var presenter: WeatherPresenterProtocol?
+    var presenter: WeatherPresenterProtocol?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,7 @@ class WeatherViewController: UIViewController {
         self.windValueLabel?.text = viewModel?.windSpeed
         self.humidityValueLabel?.text = viewModel?.humidity
         self.pressureValueLabel?.text = viewModel?.pressure
+        self.datetimeLable?.text = viewModel?.datetime
         //TODO:
         self.weatherIconImageView?.image = nil
         self.weatherWidgetView?.isHidden = viewModel == nil

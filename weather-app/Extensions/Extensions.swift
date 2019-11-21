@@ -13,3 +13,11 @@ extension String {
         return CharacterSet(charactersIn: self).isSubset(of: CharacterSet.decimalDigits)
     }
 }
+
+extension Date {
+    func dateString(format: String = "HH:mm MMM dd") -> String {
+        let df = DateFormatter()
+        df.dateFormat = format
+        return df.string(from: self)
+    }
+}

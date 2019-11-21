@@ -16,6 +16,7 @@ protocol WeatherViewModelProtocol {
     var windSpeed: String { get }
     var humidity: String { get }
     var pressure: String { get }
+    var datetime: String { get }
 }
 
 class WeatherViewModel: WeatherViewModelProtocol {
@@ -55,6 +56,11 @@ class WeatherViewModel: WeatherViewModelProtocol {
     var pressure: String {
         guard let pressure = weatherResponse.main?.pressure else { return "N/A" }
         return "\(pressure) hPa"
+    }
+
+    var datetime: String {
+        guard let timestamp = weatherResponse.dt else { return "N/A" }
+        return Date(timeIntervalSince1970: TimeInterval(timestamp)).dateString()
     }
 
     init(weatherResponse: WeatherResponse) {
