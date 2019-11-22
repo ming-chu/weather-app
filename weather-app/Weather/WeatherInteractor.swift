@@ -24,7 +24,7 @@ class WeatherInteractor: WeatherInteractorInputProtocol {
     private (set) var latestLocation: CLLocation?
 
     init() {
-        self.initLocaltionService()
+        self.initLocationService()
     }
 
     func fetchCurrentWeather(queryType: QueryType) {
@@ -48,7 +48,7 @@ class WeatherInteractor: WeatherInteractorInputProtocol {
         }
     }
 
-    private func initLocaltionService() {
+    private func initLocationService() {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
 
