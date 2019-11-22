@@ -25,6 +25,8 @@ class RecentSearchesRouter: RecentSearchesWireframeProtocol {
         interactor.presenter = presenter
         router.viewController = view
 
+        view.modalPresentationStyle = .popover
+        
         return view
     }
 }

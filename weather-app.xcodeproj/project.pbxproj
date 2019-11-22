@@ -195,11 +195,11 @@
 		0AB663A223857EC90092F5EF /* weather-app */ = {
 			isa = PBXGroup;
 			children = (
-				0A2914382388021E00B2B4BF /* RecentSearches */,
 				0AA37FC82386D437001C6E14 /* Logger */,
 				0AA37FC42386D3C3001C6E14 /* Network */,
 				0AB663D82385948F0092F5EF /* Extensions */,
 				0AB663C523857EE10092F5EF /* Weather */,
+				0A2914382388021E00B2B4BF /* RecentSearches */,
 				0AB663A323857EC90092F5EF /* AppDelegate.swift */,
 				0AB663A523857EC90092F5EF /* SceneDelegate.swift */,
 				0AB663A723857EC90092F5EF /* ViewController.swift */,

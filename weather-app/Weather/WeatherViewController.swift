@@ -65,9 +65,7 @@ class WeatherViewController: UIViewController {
         recentSearchesButton?.rx.controlEvent(.touchUpInside)
             .throttle(RxTimeInterval.milliseconds(500), scheduler: MainScheduler.instance)
             .subscribe(onNext: { (_) in
-                let vc = RecentSearchesRouter.createModule()
-                vc.modalPresentationStyle = .popover
-                self.present(vc, animated: true, completion: nil)
+                self.present(RecentSearchesRouter.createModule(), animated: true, completion: nil)
             })
             .disposed(by: self.disposeBag)
     }
