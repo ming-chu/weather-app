@@ -26,6 +26,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet private weak var pressureValueLabel: UILabel?
     @IBOutlet private weak var datetimeLable: UILabel?
     @IBOutlet private weak var errorLabel: UILabel?
+    @IBOutlet private weak var gpsSearchButton: UIButton?
 
     var presenter: WeatherPresenterProtocol?
 
@@ -38,16 +39,25 @@ class WeatherViewController: UIViewController {
         self.setInterface(viewModel: nil)
         self.searchBar?.rx.text.asDriver().drive(searchText).disposed(by: self.disposeBag)
 
-        self.presenter?.requestCurrentWeather(keyword: "Hong Kong")
+        // Search for Hong Kong by default for now
+        self.presenter?.requestWeatherSearch(keyword: "Hong Kong")
 
         searchText
             .throttle(RxTimeInterval.milliseconds(300), scheduler: MainScheduler.instance)
             .debounce(RxTimeInterval.milliseconds(500), scheduler: MainScheduler.instance)
-            .subscribe(onNext: { (searchText) in
+            .subscribe(onNext: { [weak self] (searchText) in
                 guard let searchText = searchText, !searchText.isEmpty else { return }
                 logger.debug("SearchText: \(String(describing: searchText))")
-                self.presenter?.requestCurrentWeather(keyword: searchText)
+                self?.presenter?.requestWeatherSearch(keyword: searchText)
 
+            })
+            .disposed(by: self.disposeBag)
+
+        // observe the GPS search button event to trigger a "Weather Search" using GPS
+        gpsSearchButton?.rx.controlEvent(.touchUpInside)
+            .throttle(RxTimeInterval.seconds(2), scheduler: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] (_) in
+                self?.presenter?.requestGPSWeatherSearch()
             })
             .disposed(by: self.disposeBag)
     }

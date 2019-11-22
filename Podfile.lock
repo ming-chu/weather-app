@@ -8,6 +8,11 @@ PODS:
   - RxCocoa (5.0.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
+  - RxCoreLocation (1.4.1):
+    - RxCoreLocation/Core (= 1.4.1)
+  - RxCoreLocation/Core (1.4.1):
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
   - RxRelay (5.0.1):
     - RxSwift (~> 5)
   - RxSwift (5.0.1)
@@ -18,6 +23,7 @@ DEPENDENCIES:
   - Kingfisher
   - Log
   - RxCocoa
+  - RxCoreLocation (~> 1.4)
   - RxSwift
 
 SPEC REPOS:
@@ -27,6 +33,7 @@ SPEC REPOS:
     - Kingfisher
     - Log
     - RxCocoa
+    - RxCoreLocation
     - RxRelay
     - RxSwift
 
@@ -36,9 +43,10 @@ SPEC CHECKSUMS:
   Kingfisher: eb36b7dfcc78d60877051c92c119a2865972961a
   Log: 73fab10e8b88f15cef5f322b12c9be87cf19ee6e
   RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
+  RxCoreLocation: 85e9a3310c22619404dcbf91258d29c44429eea8
   RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
 
-PODFILE CHECKSUM: 3d6af3c5336bfa8c38d04c934230555b9be35d9c
+PODFILE CHECKSUM: 83edbf90de6fd90866ab1f7ca18d7d2dd3046c78
 
 COCOAPODS: 1.8.4

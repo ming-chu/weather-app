@@ -9,10 +9,23 @@
 //
 
 import UIKit
+import CoreLocation
+import RxSwift
+import RxCocoa
+import RxCoreLocation
 
 class WeatherInteractor: WeatherInteractorInputProtocol {
 
     weak var presenter: WeatherInteractorOutputProtocol?
+
+    private let locationManager = CLLocationManager()
+    private let disposeBag = DisposeBag()
+
+    private (set) var latestLocation: CLLocation?
+
+    init() {
+        self.initLocaltionService()
+    }
 
     func fetchCurrentWeather(queryType: QueryType) {
         // get api from WebService
@@ -32,5 +45,41 @@ class WeatherInteractor: WeatherInteractorInputProtocol {
                 self?.presenter?.fetchCurrentWeatherDidSuccess(weatherResponse: response)
             }
         }
+    }
+
+    private func initLocaltionService() {
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+
+        locationManager.rx.location
+            .subscribe(onNext: { [weak self] location in
+                guard let location = location else { return }
+                self?.latestLocation = location
+            })
+            .disposed(by: self.disposeBag)
+
+        locationManager.rx.didUpdateLocations
+            .subscribe(onNext: { [weak self] _, locations in
+                guard !locations.isEmpty, let currentLocation = locations.last else { return }
+                self?.latestLocation = currentLocation
+            })
+            .disposed(by: self.disposeBag)
+
+        locationManager.rx.didChangeAuthorization
+            .subscribe(onNext: {_, status in
+                switch status {
+                case .denied:
+                    logger.debug("Authorization denied")
+                case .notDetermined:
+                    logger.debug("Authorization: not determined")
+                case .restricted:
+                    logger.debug("Authorization: restricted")
+                case .authorizedAlways, .authorizedWhenInUse:
+                    logger.debug("All good fire request")
+                default:
+                    break
+                }
+            })
+            .disposed(by: self.disposeBag)
     }
 }

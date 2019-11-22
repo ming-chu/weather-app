@@ -9,6 +9,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class WeatherPresenter: WeatherPresenterProtocol {
 
@@ -22,10 +23,17 @@ class WeatherPresenter: WeatherPresenterProtocol {
         self.router = router
     }
 
-    func requestCurrentWeather(keyword: String) {
+    func requestWeatherSearch(keyword: String) {
         let queryType: QueryType = keyword.containsNumbersOnly ? QueryType.zipCode(code: Int(keyword) ?? 0) : .cityName(name: keyword)
         interactor?.fetchCurrentWeather(queryType: queryType)
     }
+
+    func requestGPSWeatherSearch() {
+        guard let currentLocation = self.interactor?.latestLocation else { return }
+        let queryType = QueryType.coordinates(lat: currentLocation.coordinate.latitude, lon: currentLocation.coordinate.longitude)
+        interactor?.fetchCurrentWeather(queryType: queryType)
+    }
+
 }
 
 extension WeatherPresenter: WeatherInteractorOutputProtocol {

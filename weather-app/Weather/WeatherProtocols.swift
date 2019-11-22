@@ -9,6 +9,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 //MARK: Wireframe -
 protocol WeatherWireframeProtocol: class {
@@ -19,7 +20,8 @@ protocol WeatherPresenterProtocol: class {
 
     var interactor: WeatherInteractorInputProtocol? { get set }
 
-    func requestCurrentWeather(keyword: String)
+    func requestWeatherSearch(keyword: String)
+    func requestGPSWeatherSearch()
 }
 
 //MARK: Interactor -
@@ -35,6 +37,7 @@ protocol WeatherInteractorInputProtocol: class {
     var presenter: WeatherInteractorOutputProtocol?  { get set }
 
     /* Presenter -> Interactor */
+    var latestLocation: CLLocation? { get }
     func fetchCurrentWeather(queryType: QueryType)
 }
 

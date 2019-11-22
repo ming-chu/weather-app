@@ -12,6 +12,7 @@
                 <outlet property="cityNameLabel" destination="Mfx-TE-bUo" id="Y3U-Ee-pEh"/>
                 <outlet property="datetimeLable" destination="wyz-np-xDZ" id="Dhm-XR-VO8"/>
                 <outlet property="errorLabel" destination="PDG-yF-KZk" id="EYN-Ke-Wmj"/>
+                <outlet property="gpsSearchButton" destination="dwQ-eZ-jAW" id="U0e-GO-61i"/>
                 <outlet property="humidityValueLabel" destination="X6J-hU-yxO" id="R6c-sO-Qkv"/>
                 <outlet property="pressureValueLabel" destination="9He-bO-cBo" id="ozX-BX-r28"/>
                 <outlet property="searchBar" destination="ra1-Q6-lJj" id="nc5-Lv-YA9"/>
@@ -267,14 +268,21 @@
                         <constraint firstAttribute="bottom" secondItem="Ox4-PD-M9O" secondAttribute="bottom" id="sBP-5z-rhd"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwQ-eZ-jAW">
+                    <rect key="frame" x="116.5" y="476.5" width="142" height="22"/>
+                    <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Search by GPS" image="location.fill" catalog="system"/>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="aWl-zi-MRA" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Dux-d9-h5w"/>
                 <constraint firstItem="N2t-bu-f1B" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="KIn-F0-uNK"/>
+                <constraint firstItem="dwQ-eZ-jAW" firstAttribute="centerX" secondItem="N2t-bu-f1B" secondAttribute="centerX" id="Kl8-Q7-TCW"/>
                 <constraint firstItem="PDG-yF-KZk" firstAttribute="trailing" secondItem="ra1-Q6-lJj" secondAttribute="trailingMargin" id="PKg-Fz-d3G"/>
                 <constraint firstItem="ra1-Q6-lJj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Qig-lJ-WgY"/>
                 <constraint firstItem="N2t-bu-f1B" firstAttribute="top" secondItem="PDG-yF-KZk" secondAttribute="bottom" id="Shh-Bd-BuM"/>
+                <constraint firstItem="dwQ-eZ-jAW" firstAttribute="top" secondItem="N2t-bu-f1B" secondAttribute="bottom" constant="20" id="WPT-FM-lLf"/>
                 <constraint firstItem="PDG-yF-KZk" firstAttribute="top" secondItem="ra1-Q6-lJj" secondAttribute="bottom" id="bns-GM-zYC"/>
                 <constraint firstItem="N2t-bu-f1B" firstAttribute="top" secondItem="ra1-Q6-lJj" secondAttribute="bottom" constant="44" id="cRv-m9-5Wp"/>
                 <constraint firstItem="hgu-C9-c66" firstAttribute="centerX" secondItem="aWl-zi-MRA" secondAttribute="centerX" id="hgS-oR-G18"/>
@@ -297,5 +305,6 @@
     </objects>
     <resources>
         <image name="ic_weather_conditions_placeholder" width="100" height="100"/>
+        <image name="location.fill" catalog="system" width="64" height="56"/>
     </resources>
 </document>
