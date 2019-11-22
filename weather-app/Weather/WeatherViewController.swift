@@ -9,6 +9,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class WeatherViewController: UIViewController {
     
@@ -40,8 +41,7 @@ class WeatherViewController: UIViewController {
         self.humidityValueLabel?.text = viewModel?.humidity
         self.pressureValueLabel?.text = viewModel?.pressure
         self.datetimeLable?.text = viewModel?.datetime
-        //TODO:
-        self.weatherIconImageView?.image = nil
+        self.weatherIconImageView?.kf.setImage(with: viewModel?.weatherIconUrl)
         self.weatherWidgetView?.isHidden = viewModel == nil
     }
 

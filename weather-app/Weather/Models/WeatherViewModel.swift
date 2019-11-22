@@ -33,7 +33,7 @@ class WeatherViewModel: WeatherViewModelProtocol {
 
     var weatherIconUrl: URL? {
         guard let iconName = weatherResponse.weather?.first?.icon else { return nil }
-        let urlString = "http://openweathermap.org/img/wn/\(iconName)@2x.png"
+        let urlString = "https://openweathermap.org/img/wn/\(iconName)@2x.png"
         return URL(string: urlString)
     }
 
