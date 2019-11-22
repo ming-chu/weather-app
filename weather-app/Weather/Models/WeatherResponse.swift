@@ -120,11 +120,11 @@ struct Wind: Codable {
 }
 
 // MARK: - Error
-struct WeatherResponseError: Codable, Error {
+struct WeatherResponseError: Codable, LocalizedError {
     let cod: String?
     let message: String?
 
-    var localizedDescription: String {
-        return message ?? "API Error"
+    var errorDescription: String? {
+        return message ?? "API Error\(cod != nil ? ": \(cod!)" : "")"
     }
 }

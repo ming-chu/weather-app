@@ -25,6 +25,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet private weak var humidityValueLabel: UILabel?
     @IBOutlet private weak var pressureValueLabel: UILabel?
     @IBOutlet private weak var datetimeLable: UILabel?
+    @IBOutlet private weak var errorLabel: UILabel?
 
     var presenter: WeatherPresenterProtocol?
 
@@ -60,10 +61,22 @@ class WeatherViewController: UIViewController {
         self.pressureValueLabel?.text = viewModel?.pressure
         self.datetimeLable?.text = viewModel?.datetime
         self.weatherIconImageView?.kf.setImage(with: viewModel?.weatherIconUrl)
+        self.errorLabel?.alpha = 0
         self.weatherWidgetView?.isHidden = viewModel == nil
     }
 
+    private func presentError(errorMessage: String) {
+        self.errorLabel?.text = errorMessage
+        self.errorLabel?.alpha = 0
 
+        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.3, delay: 0, animations: {
+            self.errorLabel?.alpha = 1
+        }, completion: { [weak self] position in
+            UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.3, delay: 2.5, animations: {
+                self?.errorLabel?.alpha = 0
+            }, completion: nil)
+        })
+    }
 }
 
 extension WeatherViewController: WeatherViewProtocol {
@@ -73,6 +86,7 @@ extension WeatherViewController: WeatherViewProtocol {
     }
 
     func showError(errorMessage: String) {
-        //TODO: show error
+        logger.debug(errorMessage)
+        self.presentError(errorMessage: errorMessage)
     }
 }
