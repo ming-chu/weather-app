@@ -4,23 +4,37 @@ PODS:
     - Kingfisher/Core (= 5.10.1)
   - Kingfisher/Core (5.10.1)
   - Log (2.0)
+  - RxCocoa (5.0.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.0.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-rc.3)
   - Kingfisher
   - Log
+  - RxCocoa
+  - RxSwift
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Kingfisher
     - Log
+    - RxCocoa
+    - RxRelay
+    - RxSwift
 
 SPEC CHECKSUMS:
   Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
   Kingfisher: eb36b7dfcc78d60877051c92c119a2865972961a
   Log: 73fab10e8b88f15cef5f322b12c9be87cf19ee6e
+  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
+  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
+  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
 
-PODFILE CHECKSUM: 9110571e66f3fc1588a09d99b627931a31b3738a
+PODFILE CHECKSUM: da0c4b6a628507e9d7d52572bd30c9b6b13a2a56
 
 COCOAPODS: 1.8.4

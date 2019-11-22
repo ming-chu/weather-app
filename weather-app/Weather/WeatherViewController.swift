@@ -10,6 +10,8 @@
 
 import UIKit
 import Kingfisher
+import RxSwift
+import RxCocoa
 
 class WeatherViewController: UIViewController {
     
@@ -26,11 +28,27 @@ class WeatherViewController: UIViewController {
 
     var presenter: WeatherPresenterProtocol?
 
+    private let searchText = BehaviorRelay<String?>(value: nil)
+    private let disposeBag = DisposeBag()
+
 	override func viewDidLoad() {
         super.viewDidLoad()
 
         self.setInterface(viewModel: nil)
+        self.searchBar?.rx.text.asDriver().drive(searchText).disposed(by: self.disposeBag)
+
         self.presenter?.requestCurrentWeather(keyword: "Hong Kong")
+
+        searchText
+            .throttle(RxTimeInterval.milliseconds(300), scheduler: MainScheduler.instance)
+            .debounce(RxTimeInterval.milliseconds(500), scheduler: MainScheduler.instance)
+            .subscribe(onNext: { (searchText) in
+                guard let searchText = searchText, !searchText.isEmpty else { return }
+                logger.debug("SearchText: \(String(describing: searchText))")
+                self.presenter?.requestCurrentWeather(keyword: searchText)
+
+            })
+            .disposed(by: self.disposeBag)
     }
 
     private func setInterface(viewModel: WeatherViewModelProtocol?) {
