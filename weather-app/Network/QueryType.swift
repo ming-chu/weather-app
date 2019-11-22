@@ -49,4 +49,31 @@ enum QueryType {
             return ["lat" : lat, "lon" : lon]
         }
     }
+
+    var typeName: QueryTypeName {
+        switch self {
+        case .cityName:
+            return .cityName
+        case .zipCode:
+            return .zipCode
+        case .coordinates:
+            return .coordinates
+        }
+    }
+
+    func createSearchRecord() -> SearchRecord {
+        var record = SearchRecord(searchType: self.typeName.rawValue)
+        let params = self.params
+        record.cityName = params["q"] as? String
+        record.gpsLat = params["lat"] as? Double
+        record.gpsLon = params["lon"] as? Double
+        record.zipCode = params["zip"] as? Int
+        return record
+    }
+}
+
+enum QueryTypeName: String {
+    case cityName = "cityName"
+    case zipCode = "zipCode"
+    case coordinates = "coordinates"
 }

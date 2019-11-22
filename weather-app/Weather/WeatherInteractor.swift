@@ -34,6 +34,7 @@ class WeatherInteractor: WeatherInteractorInputProtocol {
         //api.openweathermap.org/data/2.5/weather?zip={zip code}
         //api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}
 
+        SearchHistoryManager.shared.insertRecord(searchRecord: queryType.createSearchRecord())
         WebServiceManager.shared.request(params: queryType.params, completion: handler)
     }
 

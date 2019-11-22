@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A0D4C3B2387AA0E00A4A5FA /* SearchHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D4C3A2387AA0E00A4A5FA /* SearchHistoryManager.swift */; };
+		0A0D4C3C2387AA0E00A4A5FA /* SearchHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D4C3A2387AA0E00A4A5FA /* SearchHistoryManager.swift */; };
 		0AA37FC62386D3D9001C6E14 /* WebServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA37FC52386D3D9001C6E14 /* WebServiceManager.swift */; };
 		0AA37FC72386D3D9001C6E14 /* WebServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA37FC52386D3D9001C6E14 /* WebServiceManager.swift */; };
 		0AA37FCA2386D444001C6E14 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA37FC92386D444001C6E14 /* Logger.swift */; };
@@ -53,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A0D4C3A2387AA0E00A4A5FA /* SearchHistoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryManager.swift; sourceTree = "<group>"; };
 		0AA37FC52386D3D9001C6E14 /* WebServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceManager.swift; sourceTree = "<group>"; };
 		0AA37FC92386D444001C6E14 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		0AA37FCD2386D4B4001C6E14 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
@@ -104,6 +107,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A0D4C3D2387AA1200A4A5FA /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				0A0D4C3A2387AA0E00A4A5FA /* SearchHistoryManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		0AA37FC42386D3C3001C6E14 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +191,7 @@
 		0AB663C523857EE10092F5EF /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				0A0D4C3D2387AA1200A4A5FA /* Managers */,
 				0AA37FCC2386D4A3001C6E14 /* Models */,
 				0AB663C623857EF90092F5EF /* WeatherPresenter.swift */,
 				0AB663C723857EF90092F5EF /* WeatherRouter.swift */,
@@ -393,6 +405,7 @@
 				0AA37FD42386D94A001C6E14 /* WeatherViewModel.swift in Sources */,
 				0AA37FCA2386D444001C6E14 /* Logger.swift in Sources */,
 				0AB663A823857EC90092F5EF /* ViewController.swift in Sources */,
+				0A0D4C3B2387AA0E00A4A5FA /* SearchHistoryManager.swift in Sources */,
 				0AA37FD72386DA12001C6E14 /* QueryType.swift in Sources */,
 				0AB663DA238594B60092F5EF /* Extensions.swift in Sources */,
 				0AB663D023857EF90092F5EF /* WeatherViewController.swift in Sources */,
@@ -414,6 +427,7 @@
 				0AA37FCF2386D4B4001C6E14 /* WeatherResponse.swift in Sources */,
 				0AB663D323857EF90092F5EF /* WeatherProtocols.swift in Sources */,
 				0AA37FD52386D94A001C6E14 /* WeatherViewModel.swift in Sources */,
+				0A0D4C3C2387AA0E00A4A5FA /* SearchHistoryManager.swift in Sources */,
 				0AB663D123857EF90092F5EF /* WeatherViewController.swift in Sources */,
 				0AB663CD23857EF90092F5EF /* WeatherPresenter.swift in Sources */,
 				0AA37FCB2386D444001C6E14 /* Logger.swift in Sources */,
