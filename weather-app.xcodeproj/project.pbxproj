@@ -9,6 +9,18 @@
 /* Begin PBXBuildFile section */
 		0A0D4C3B2387AA0E00A4A5FA /* SearchHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D4C3A2387AA0E00A4A5FA /* SearchHistoryManager.swift */; };
 		0A0D4C3C2387AA0E00A4A5FA /* SearchHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D4C3A2387AA0E00A4A5FA /* SearchHistoryManager.swift */; };
+		0A29143F2388023700B2B4BF /* RecentSearchesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2914392388023700B2B4BF /* RecentSearchesPresenter.swift */; };
+		0A2914402388023700B2B4BF /* RecentSearchesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2914392388023700B2B4BF /* RecentSearchesPresenter.swift */; };
+		0A2914412388023700B2B4BF /* RecentSearchesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A29143A2388023700B2B4BF /* RecentSearchesRouter.swift */; };
+		0A2914422388023700B2B4BF /* RecentSearchesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A29143A2388023700B2B4BF /* RecentSearchesRouter.swift */; };
+		0A2914432388023700B2B4BF /* RecentSearchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A29143B2388023700B2B4BF /* RecentSearchesViewController.swift */; };
+		0A2914442388023700B2B4BF /* RecentSearchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A29143B2388023700B2B4BF /* RecentSearchesViewController.swift */; };
+		0A2914452388023700B2B4BF /* RecentSearchesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A29143C2388023700B2B4BF /* RecentSearchesProtocols.swift */; };
+		0A2914462388023700B2B4BF /* RecentSearchesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A29143C2388023700B2B4BF /* RecentSearchesProtocols.swift */; };
+		0A2914472388023700B2B4BF /* RecentSearchesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A29143D2388023700B2B4BF /* RecentSearchesInteractor.swift */; };
+		0A2914482388023700B2B4BF /* RecentSearchesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A29143D2388023700B2B4BF /* RecentSearchesInteractor.swift */; };
+		0A2914492388023700B2B4BF /* RecentSearchesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A29143E2388023700B2B4BF /* RecentSearchesViewController.xib */; };
+		0A29144A2388023700B2B4BF /* RecentSearchesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A29143E2388023700B2B4BF /* RecentSearchesViewController.xib */; };
 		0AA37FC62386D3D9001C6E14 /* WebServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA37FC52386D3D9001C6E14 /* WebServiceManager.swift */; };
 		0AA37FC72386D3D9001C6E14 /* WebServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA37FC52386D3D9001C6E14 /* WebServiceManager.swift */; };
 		0AA37FCA2386D444001C6E14 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA37FC92386D444001C6E14 /* Logger.swift */; };
@@ -56,6 +68,12 @@
 
 /* Begin PBXFileReference section */
 		0A0D4C3A2387AA0E00A4A5FA /* SearchHistoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryManager.swift; sourceTree = "<group>"; };
+		0A2914392388023700B2B4BF /* RecentSearchesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchesPresenter.swift; sourceTree = "<group>"; };
+		0A29143A2388023700B2B4BF /* RecentSearchesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchesRouter.swift; sourceTree = "<group>"; };
+		0A29143B2388023700B2B4BF /* RecentSearchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchesViewController.swift; sourceTree = "<group>"; };
+		0A29143C2388023700B2B4BF /* RecentSearchesProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchesProtocols.swift; sourceTree = "<group>"; };
+		0A29143D2388023700B2B4BF /* RecentSearchesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchesInteractor.swift; sourceTree = "<group>"; };
+		0A29143E2388023700B2B4BF /* RecentSearchesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentSearchesViewController.xib; sourceTree = "<group>"; };
 		0AA37FC52386D3D9001C6E14 /* WebServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceManager.swift; sourceTree = "<group>"; };
 		0AA37FC92386D444001C6E14 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		0AA37FCD2386D4B4001C6E14 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
@@ -115,6 +133,19 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		0A2914382388021E00B2B4BF /* RecentSearches */ = {
+			isa = PBXGroup;
+			children = (
+				0A2914392388023700B2B4BF /* RecentSearchesPresenter.swift */,
+				0A29143A2388023700B2B4BF /* RecentSearchesRouter.swift */,
+				0A29143B2388023700B2B4BF /* RecentSearchesViewController.swift */,
+				0A29143C2388023700B2B4BF /* RecentSearchesProtocols.swift */,
+				0A29143D2388023700B2B4BF /* RecentSearchesInteractor.swift */,
+				0A29143E2388023700B2B4BF /* RecentSearchesViewController.xib */,
+			);
+			path = RecentSearches;
+			sourceTree = "<group>";
+		};
 		0AA37FC42386D3C3001C6E14 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +195,7 @@
 		0AB663A223857EC90092F5EF /* weather-app */ = {
 			isa = PBXGroup;
 			children = (
+				0A2914382388021E00B2B4BF /* RecentSearches */,
 				0AA37FC82386D437001C6E14 /* Logger */,
 				0AA37FC42386D3C3001C6E14 /* Network */,
 				0AB663D82385948F0092F5EF /* Extensions */,
@@ -316,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AB663B023857ECA0092F5EF /* LaunchScreen.storyboard in Resources */,
+				0A2914492388023700B2B4BF /* RecentSearchesViewController.xib in Resources */,
 				0AB663D623857EF90092F5EF /* WeatherViewController.xib in Resources */,
 				0AB663AD23857ECA0092F5EF /* Assets.xcassets in Resources */,
 				0AB663AB23857EC90092F5EF /* Main.storyboard in Resources */,
@@ -326,6 +359,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A29144A2388023700B2B4BF /* RecentSearchesViewController.xib in Resources */,
 				0AB663D723857EF90092F5EF /* WeatherViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,16 +440,21 @@
 				0AA37FCA2386D444001C6E14 /* Logger.swift in Sources */,
 				0AB663A823857EC90092F5EF /* ViewController.swift in Sources */,
 				0A0D4C3B2387AA0E00A4A5FA /* SearchHistoryManager.swift in Sources */,
+				0A2914432388023700B2B4BF /* RecentSearchesViewController.swift in Sources */,
+				0A2914452388023700B2B4BF /* RecentSearchesProtocols.swift in Sources */,
 				0AA37FD72386DA12001C6E14 /* QueryType.swift in Sources */,
 				0AB663DA238594B60092F5EF /* Extensions.swift in Sources */,
 				0AB663D023857EF90092F5EF /* WeatherViewController.swift in Sources */,
 				0AB663CE23857EF90092F5EF /* WeatherRouter.swift in Sources */,
+				0A2914472388023700B2B4BF /* RecentSearchesInteractor.swift in Sources */,
 				0AB663CC23857EF90092F5EF /* WeatherPresenter.swift in Sources */,
 				0AA37FCE2386D4B4001C6E14 /* WeatherResponse.swift in Sources */,
 				0AB663A423857EC90092F5EF /* AppDelegate.swift in Sources */,
+				0A2914412388023700B2B4BF /* RecentSearchesRouter.swift in Sources */,
 				0AB663D423857EF90092F5EF /* WeatherInteractor.swift in Sources */,
 				0AB663D223857EF90092F5EF /* WeatherProtocols.swift in Sources */,
 				0AB663A623857EC90092F5EF /* SceneDelegate.swift in Sources */,
+				0A29143F2388023700B2B4BF /* RecentSearchesPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +462,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A2914462388023700B2B4BF /* RecentSearchesProtocols.swift in Sources */,
 				0AB663BB23857ECA0092F5EF /* weather_appTests.swift in Sources */,
 				0AA37FCF2386D4B4001C6E14 /* WeatherResponse.swift in Sources */,
 				0AB663D323857EF90092F5EF /* WeatherProtocols.swift in Sources */,
@@ -430,10 +470,14 @@
 				0A0D4C3C2387AA0E00A4A5FA /* SearchHistoryManager.swift in Sources */,
 				0AB663D123857EF90092F5EF /* WeatherViewController.swift in Sources */,
 				0AB663CD23857EF90092F5EF /* WeatherPresenter.swift in Sources */,
+				0A2914442388023700B2B4BF /* RecentSearchesViewController.swift in Sources */,
+				0A2914402388023700B2B4BF /* RecentSearchesPresenter.swift in Sources */,
 				0AA37FCB2386D444001C6E14 /* Logger.swift in Sources */,
 				0AA37FC72386D3D9001C6E14 /* WebServiceManager.swift in Sources */,
 				0AB663CF23857EF90092F5EF /* WeatherRouter.swift in Sources */,
 				0AB663D523857EF90092F5EF /* WeatherInteractor.swift in Sources */,
+				0A2914422388023700B2B4BF /* RecentSearchesRouter.swift in Sources */,
+				0A2914482388023700B2B4BF /* RecentSearchesInteractor.swift in Sources */,
 				0AA37FD82386DA12001C6E14 /* QueryType.swift in Sources */,
 				0AB663DB238594B60092F5EF /* Extensions.swift in Sources */,
 			);
