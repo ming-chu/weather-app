@@ -39,8 +39,8 @@ class WeatherViewController: UIViewController {
         self.setInterface(viewModel: nil)
         self.searchBar?.rx.text.asDriver().drive(searchText).disposed(by: self.disposeBag)
 
-        // Search for Hong Kong by default for now
-        self.presenter?.requestWeatherSearch(keyword: "Hong Kong")
+        // Search weather for most recent search
+        self.presenter?.requestWeatherForMostRecentSearch()
 
         searchText
             .throttle(RxTimeInterval.milliseconds(300), scheduler: MainScheduler.instance)

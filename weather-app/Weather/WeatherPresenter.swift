@@ -34,6 +34,17 @@ class WeatherPresenter: WeatherPresenterProtocol {
         interactor?.fetchCurrentWeather(queryType: queryType)
     }
 
+    func requestWeatherForMostRecentSearch() {
+        guard let lastQueryType = SearchHistoryManager.shared.getRecords().last?.queryType else {
+            if self.interactor?.latestLocation != nil {
+                requestGPSWeatherSearch()
+            } else {
+                requestWeatherSearch(keyword: "Hong Kong")
+            }
+            return
+        }
+        interactor?.fetchCurrentWeather(queryType: lastQueryType)
+    }
 }
 
 extension WeatherPresenter: WeatherInteractorOutputProtocol {

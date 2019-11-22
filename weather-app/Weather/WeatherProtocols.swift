@@ -20,6 +20,8 @@ protocol WeatherPresenterProtocol: class {
 
     var interactor: WeatherInteractorInputProtocol? { get set }
 
+    /// Will try request weather for most recent search, use GPS search if recent search failed, use "Hong Kong" name search if GPS not ready
+    func requestWeatherForMostRecentSearch()
     func requestWeatherSearch(keyword: String)
     func requestGPSWeatherSearch()
 }
