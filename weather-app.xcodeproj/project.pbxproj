@@ -136,6 +136,7 @@
 		0A2914382388021E00B2B4BF /* RecentSearches */ = {
 			isa = PBXGroup;
 			children = (
+				0A29144B2388047C00B2B4BF /* Views */,
 				0A2914392388023700B2B4BF /* RecentSearchesPresenter.swift */,
 				0A29143A2388023700B2B4BF /* RecentSearchesRouter.swift */,
 				0A29143B2388023700B2B4BF /* RecentSearchesViewController.swift */,
@@ -144,6 +145,20 @@
 				0A29143E2388023700B2B4BF /* RecentSearchesViewController.xib */,
 			);
 			path = RecentSearches;
+			sourceTree = "<group>";
+		};
+		0A29144B2388047C00B2B4BF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0A29144C238804B800B2B4BF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		0AA37FC42386D3C3001C6E14 /* Network */ = {
@@ -195,6 +210,7 @@
 		0AB663A223857EC90092F5EF /* weather-app */ = {
 			isa = PBXGroup;
 			children = (
+				0A29144C238804B800B2B4BF /* Common */,
 				0AA37FC82386D437001C6E14 /* Logger */,
 				0AA37FC42386D3C3001C6E14 /* Network */,
 				0AB663D82385948F0092F5EF /* Extensions */,

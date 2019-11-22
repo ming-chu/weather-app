@@ -12,10 +12,36 @@ import UIKit
 
 class RecentSearchesViewController: UIViewController, RecentSearchesViewProtocol {
 
-	var presenter: RecentSearchesPresenterProtocol?
+    @IBOutlet private weak var tableView: UITableView?
+
+    @IBAction func closeButtonDidPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+
+    var presenter: RecentSearchesPresenterProtocol?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.setupInterface()
     }
+
+    private func setupInterface() {
+        self.tableView?.dataSource = self
+        self.tableView?.delegate = self
+    }
+}
+
+extension RecentSearchesViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+}
+
+extension RecentSearchesViewController: UITableViewDelegate {
 
 }
