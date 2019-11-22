@@ -15,6 +15,7 @@
                 <outlet property="gpsSearchButton" destination="dwQ-eZ-jAW" id="U0e-GO-61i"/>
                 <outlet property="humidityValueLabel" destination="X6J-hU-yxO" id="R6c-sO-Qkv"/>
                 <outlet property="pressureValueLabel" destination="9He-bO-cBo" id="ozX-BX-r28"/>
+                <outlet property="recentSearchesButton" destination="zjl-1s-nKf" id="R1l-kG-pxI"/>
                 <outlet property="searchBar" destination="ra1-Q6-lJj" id="nc5-Lv-YA9"/>
                 <outlet property="temperatureLabel" destination="r6X-bX-2dd" id="p6L-zS-1bB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -278,9 +279,19 @@
                     <color key="tintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" image="location.fill" catalog="system"/>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjl-1s-nKf">
+                    <rect key="frame" x="109" y="476.5" width="157" height="36"/>
+                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                    <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                    <state key="normal" title="Recent Searches">
+                        <color key="titleColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="zjl-1s-nKf" firstAttribute="top" secondItem="N2t-bu-f1B" secondAttribute="bottom" constant="20" id="4JO-8x-O1Y"/>
                 <constraint firstItem="aWl-zi-MRA" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Dux-d9-h5w"/>
                 <constraint firstItem="dwQ-eZ-jAW" firstAttribute="leading" secondItem="ra1-Q6-lJj" secondAttribute="leadingMargin" constant="30" id="FMm-Ni-kBZ"/>
                 <constraint firstItem="N2t-bu-f1B" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="KIn-F0-uNK"/>
@@ -289,6 +300,7 @@
                 <constraint firstItem="N2t-bu-f1B" firstAttribute="top" secondItem="PDG-yF-KZk" secondAttribute="bottom" id="Shh-Bd-BuM"/>
                 <constraint firstItem="PDG-yF-KZk" firstAttribute="top" secondItem="ra1-Q6-lJj" secondAttribute="bottom" id="bns-GM-zYC"/>
                 <constraint firstItem="N2t-bu-f1B" firstAttribute="top" secondItem="ra1-Q6-lJj" secondAttribute="bottom" constant="44" id="cRv-m9-5Wp"/>
+                <constraint firstItem="zjl-1s-nKf" firstAttribute="centerX" secondItem="Vbg-In-zLw" secondAttribute="centerX" id="cdZ-1g-XbQ"/>
                 <constraint firstItem="dwQ-eZ-jAW" firstAttribute="centerY" secondItem="ra1-Q6-lJj" secondAttribute="centerY" id="dHC-lH-DaN"/>
                 <constraint firstItem="hgu-C9-c66" firstAttribute="centerX" secondItem="aWl-zi-MRA" secondAttribute="centerX" id="hgS-oR-G18"/>
                 <constraint firstAttribute="trailing" secondItem="ra1-Q6-lJj" secondAttribute="trailing" id="jar-d2-0nQ"/>

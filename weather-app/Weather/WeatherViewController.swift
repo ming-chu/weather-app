@@ -27,6 +27,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet private weak var datetimeLable: UILabel?
     @IBOutlet private weak var errorLabel: UILabel?
     @IBOutlet private weak var gpsSearchButton: UIButton?
+    @IBOutlet private weak var recentSearchesButton: UIButton?
 
     var presenter: WeatherPresenterProtocol?
 
@@ -58,6 +59,13 @@ class WeatherViewController: UIViewController {
             .throttle(RxTimeInterval.seconds(2), scheduler: MainScheduler.instance)
             .subscribe(onNext: { [weak self] (_) in
                 self?.presenter?.requestGPSWeatherSearch()
+            })
+            .disposed(by: self.disposeBag)
+
+        recentSearchesButton?.rx.controlEvent(.touchUpInside)
+            .throttle(RxTimeInterval.milliseconds(500), scheduler: MainScheduler.instance)
+            .subscribe(onNext: { (_) in
+                //TODO:
             })
             .disposed(by: self.disposeBag)
     }
