@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.0.0-rc.3)
+  - IQKeyboardManager (6.5.4)
   - Kingfisher (5.10.1):
     - Kingfisher/Core (= 5.10.1)
   - Kingfisher/Core (5.10.1)
@@ -13,6 +14,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-rc.3)
+  - IQKeyboardManager
   - Kingfisher
   - Log
   - RxCocoa
@@ -21,6 +23,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - IQKeyboardManager
     - Kingfisher
     - Log
     - RxCocoa
@@ -29,12 +32,13 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
+  IQKeyboardManager: 72b359cd7e777e3a984cedbe05f8da45320cbb63
   Kingfisher: eb36b7dfcc78d60877051c92c119a2865972961a
   Log: 73fab10e8b88f15cef5f322b12c9be87cf19ee6e
   RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
   RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
 
-PODFILE CHECKSUM: da0c4b6a628507e9d7d52572bd30c9b6b13a2a56
+PODFILE CHECKSUM: 3d6af3c5336bfa8c38d04c934230555b9be35d9c
 
 COCOAPODS: 1.8.4

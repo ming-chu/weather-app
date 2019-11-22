@@ -11,6 +11,7 @@ target 'weather-app' do
   pod 'Kingfisher'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'IQKeyboardManager'
 
   target 'weather-appTests' do
     inherit! :search_paths
