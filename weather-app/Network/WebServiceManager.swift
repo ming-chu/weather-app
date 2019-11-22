@@ -15,15 +15,11 @@ class WebServiceManager {
     static let shared = WebServiceManager()
 
     var baseUrlString: String? {
-        guard let path = Bundle.main.path(forResource: "Info", ofType: "plist") else { return nil }
-        guard let dictionary = NSDictionary(contentsOfFile: path) else { return nil }
-        return dictionary["WeatherAPIEndpoint"] as? String
+        return Bundle.main.getValue(forKey: "WeatherAPIEndpoint")
     }
 
     var apiKey: String? {
-        guard let path = Bundle.main.path(forResource: "Info", ofType: "plist") else { return nil }
-        guard let dictionary = NSDictionary(contentsOfFile: path) else { return nil }
-        return dictionary["WeatherAPIKey"] as? String
+        return Bundle.main.getValue(forKey: "WeatherAPIKey")
     }
 
     func request<T: Codable>(params: Parameters?,

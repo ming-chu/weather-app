@@ -15,7 +15,7 @@ class WeatherInteractor: WeatherInteractorInputProtocol {
     weak var presenter: WeatherInteractorOutputProtocol?
 
     func fetchCurrentWeather(queryType: QueryType) {
-        //TODO: get api from WebService
+        // get api from WebService
 
         //api.openweathermap.org/data/2.5/weather?q={city name}
         //api.openweathermap.org/data/2.5/weather?zip={zip code}
