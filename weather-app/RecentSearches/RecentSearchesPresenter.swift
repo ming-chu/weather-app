@@ -29,12 +29,19 @@ class RecentSearchesPresenter: RecentSearchesPresenterProtocol {
         self.interactor?.requestFetchHistoryService()
     }
 
-    func requestRemoveSearchRecord(record: SearchRecord) {
+    func requestRemoveSearchRecord(recordId: String) {
+        guard let record = SearchHistoryManager.shared.getRecord(recordId: recordId) else { return }
         self.interactor?.removeSearchRecord(record: record)
+        self.requestFetchSearchHistory()
     }
 
     func requestRemoveAllSearchRecord() {
         self.interactor?.removeAllSearchRecord()
+    }
+
+    func requestPerformSearch(recordId: String) {
+        guard let record = SearchHistoryManager.shared.getRecord(recordId: recordId) else { return }
+        self.router.presentSearch(record: record)
     }
 }
 

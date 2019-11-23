@@ -31,6 +31,10 @@ class SearchHistoryManager {
         return searchHistory.searchRecords
     }
 
+    func getRecord(recordId: String) -> SearchRecord? {
+        return searchHistory.searchRecords.filter({ $0.recordId == recordId }).first
+    }
+
     func cleanRecords() {
         self.searchHistory.searchRecords.removeAll()
         self.store()

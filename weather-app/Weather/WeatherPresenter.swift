@@ -23,6 +23,7 @@ class WeatherPresenter: WeatherPresenterProtocol {
         self.router = router
     }
 
+    // MARK: - WeatherPresenterProtocol
     func requestWeatherSearch(keyword: String) {
         let queryType: QueryType = keyword.containsNumbersOnly ? QueryType.zipCode(code: Int(keyword) ?? 0) : .cityName(name: keyword)
         interactor?.fetchCurrentWeather(queryType: queryType)
@@ -44,6 +45,11 @@ class WeatherPresenter: WeatherPresenterProtocol {
             return
         }
         interactor?.fetchCurrentWeather(queryType: lastQueryType)
+    }
+
+    func requestWeatherSearch(record: SearchRecord) {
+        guard let queryType = record.queryType else { return }
+        interactor?.fetchCurrentWeather(queryType: queryType)
     }
 }
 

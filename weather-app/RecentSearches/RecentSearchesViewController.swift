@@ -65,10 +65,10 @@ extension RecentSearchesViewController: UITableViewDelegate {
 
 extension RecentSearchesViewController: SearchRecordTableViewCellDelegate {
     func requestDeleteRecord(recordId: String) {
-        //TODO:
+        self.presenter?.requestRemoveSearchRecord(recordId: recordId)
     }
 
     func requestPerformSearch(recordId: String) {
-        //TODO:
+        self.presenter?.requestPerformSearch(recordId: recordId)
     }
 }

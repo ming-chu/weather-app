@@ -13,6 +13,10 @@ import Kingfisher
 import RxSwift
 import RxCocoa
 
+protocol WeatherViewControllerDelegate {
+    func searchWeather(record: SearchRecord)
+}
+
 class WeatherViewController: UIViewController {
     
     @IBOutlet private weak var searchBar: UISearchBar?
@@ -64,8 +68,8 @@ class WeatherViewController: UIViewController {
 
         recentSearchesButton?.rx.controlEvent(.touchUpInside)
             .throttle(RxTimeInterval.milliseconds(500), scheduler: MainScheduler.instance)
-            .subscribe(onNext: { (_) in
-                self.present(RecentSearchesRouter.createModule(), animated: true, completion: nil)
+            .subscribe(onNext: { [weak self] (_) in
+                self?.present(RecentSearchesRouter.createModule(delegate: self), animated: true, completion: nil)
             })
             .disposed(by: self.disposeBag)
     }
@@ -106,5 +110,11 @@ extension WeatherViewController: WeatherViewProtocol {
     func showError(errorMessage: String) {
         logger.debug(errorMessage)
         self.presentError(errorMessage: errorMessage)
+    }
+}
+
+extension WeatherViewController: WeatherViewControllerDelegate {
+    func searchWeather(record: SearchRecord) {
+        self.presenter?.requestWeatherSearch(record: record)
     }
 }

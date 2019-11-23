@@ -14,7 +14,9 @@ class RecentSearchesRouter: RecentSearchesWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    private var delegate: WeatherViewControllerDelegate?
+
+    static func createModule(delegate: WeatherViewControllerDelegate?) -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = RecentSearchesViewController(nibName: nil, bundle: nil)
         let interactor = RecentSearchesInteractor()
@@ -26,7 +28,14 @@ class RecentSearchesRouter: RecentSearchesWireframeProtocol {
         router.viewController = view
 
         view.modalPresentationStyle = .popover
-        
+
+        router.delegate = delegate
+
         return view
+    }
+    
+    func presentSearch(record: SearchRecord) {
+        self.delegate?.searchWeather(record: record)
+        self.viewController?.dismiss(animated: true, completion: nil)
     }
 }

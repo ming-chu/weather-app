@@ -12,7 +12,7 @@ import Foundation
 
 //MARK: Wireframe -
 protocol RecentSearchesWireframeProtocol: class {
-
+    func presentSearch(record: SearchRecord)
 }
 //MARK: Presenter -
 protocol RecentSearchesPresenterProtocol: class {
@@ -21,8 +21,9 @@ protocol RecentSearchesPresenterProtocol: class {
 
     var searchRecords: [SearchRecord] { get }
     func requestFetchSearchHistory()
-    func requestRemoveSearchRecord(record: SearchRecord)
+    func requestRemoveSearchRecord(recordId: String)
     func requestRemoveAllSearchRecord()
+    func requestPerformSearch(recordId: String)
 }
 
 //MARK: Interactor -
