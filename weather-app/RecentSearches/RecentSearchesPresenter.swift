@@ -32,13 +32,13 @@ class RecentSearchesPresenter: RecentSearchesPresenterProtocol {
     func requestRemoveSearchRecord(recordId: String) {
         guard let record = SearchHistoryManager.shared.getRecord(recordId: recordId) else { return }
         self.interactor?.removeSearchRecord(record: record)
-        self.removeSearchRecordDidSuccess()
+        self.removeSearchRecordDidSuccess(message: "The Record [\(recordId)] was removed.")
         self.requestFetchSearchHistory()
     }
 
     func requestRemoveAllSearchRecord() {
         self.interactor?.removeAllSearchRecord()
-        self.removeSearchRecordDidSuccess()
+        self.removeSearchRecordDidSuccess(message: "The Records was removed.")
         self.requestFetchSearchHistory()
     }
 
@@ -49,8 +49,9 @@ class RecentSearchesPresenter: RecentSearchesPresenterProtocol {
 }
 
 extension RecentSearchesPresenter: RecentSearchesInteractorOutputProtocol {
-    func removeSearchRecordDidSuccess() {
-        self.view?.showSnackbarMessage(message: "The Record was removed.")
+    func removeSearchRecordDidSuccess(message: String?) {
+        guard let message = message else { return }
+        self.view?.showSnackbarMessage(message: message)
     }
 
     func fetchSearchHistoryDidSuccess(records: [SearchRecord]) {

@@ -15,9 +15,14 @@ class RecentSearchesViewController: UIViewController {
 
     @IBOutlet private weak var tableView: UITableView?
     @IBOutlet private weak var emptyRecordsPlaceholderLable: UILabel?
+    @IBOutlet private weak var clearAllButton: UIButton?
 
     @IBAction func closeButtonDidPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+
+    @IBAction func clearAllButtonDidPressed(_ sender: Any) {
+        self.presenter?.requestRemoveAllSearchRecord()
     }
 
     var presenter: RecentSearchesPresenterProtocol?
@@ -46,6 +51,7 @@ extension RecentSearchesViewController: RecentSearchesViewProtocol {
 
     func updateSearchHistory(records: [SearchRecord]) {
         self.emptyRecordsPlaceholderLable?.isHidden = records.count > 0
+        self.clearAllButton?.isHidden = records.count == 0
         self.tableView?.reloadData()
     }
 }

@@ -33,7 +33,7 @@ protocol RecentSearchesInteractorOutputProtocol: class {
     /* Interactor -> Presenter */
     func fetchSearchHistoryDidSuccess(records: [SearchRecord])
     func fetchSearchHistoryDidFailed(error: Error?)
-    func removeSearchRecordDidSuccess()
+    func removeSearchRecordDidSuccess(message: String?)
 }
 
 protocol RecentSearchesInteractorInputProtocol: class {

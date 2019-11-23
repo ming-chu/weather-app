@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecentSearchesViewController">
             <connections>
+                <outlet property="clearAllButton" destination="aIQ-Cu-Ue7" id="0pg-C0-NnU"/>
                 <outlet property="emptyRecordsPlaceholderLable" destination="FRa-Sf-fM0" id="lch-tX-8ac"/>
                 <outlet property="tableView" destination="IVr-kH-KgO" id="qsA-4A-R43"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -56,6 +57,9 @@
                     <state key="normal" title="Clear All">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="clearAllButtonDidPressed:" destination="-1" eventType="touchUpInside" id="ERC-qg-rxL"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
