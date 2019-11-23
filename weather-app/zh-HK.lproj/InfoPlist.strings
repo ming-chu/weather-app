@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  weather-app
+
+  Created by Ming Chu on 23/11/2019.
+  Copyright © 2019 vegantell. All rights reserved.
+*/
+
+"NSLocationWhenInUseUsageDescription" = "幫你搵出而家位置既天氣 :D";
+"CFBundleName" = "我的天氣!";
