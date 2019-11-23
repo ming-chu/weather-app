@@ -61,6 +61,17 @@ enum QueryType {
         }
     }
 
+    var description: String {
+        switch self {
+        case .cityName(let name):
+            return "Search weather in \(name)"
+        case .zipCode(let zipCode):
+            return "Search weather by zip code: \(zipCode)"
+        case .coordinates(let lat, let lon):
+            return "Search weather using GPS: \(lat),\(lon)"
+        }
+    }
+
     func createSearchRecord() -> SearchRecord {
         var record = SearchRecord(searchType: self.typeName.rawValue)
         let params = self.params

@@ -56,6 +56,7 @@
                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="tH2-Qm-T0D" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pTQ-Ng-yST" secondAttribute="trailing" id="2In-Ad-moz"/>
+                    <constraint firstItem="tH2-Qm-T0D" firstAttribute="top" relation="greaterThanOrEqual" secondItem="pMZ-2L-pE4" secondAttribute="bottom" constant="8" id="3FC-vO-Nya"/>
                     <constraint firstItem="pTQ-Ng-yST" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="I1l-L3-sJU"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="pTQ-Ng-yST" secondAttribute="bottom" constant="8" id="YH1-IZ-ZT2"/>
                     <constraint firstAttribute="trailing" secondItem="tH2-Qm-T0D" secondAttribute="trailing" constant="8" id="eWM-LX-SzR"/>
@@ -74,14 +75,6 @@
             </connections>
             <point key="canvasLocation" x="50.724637681159422" y="140.95982142857142"/>
         </tableViewCell>
-        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="42z-Ra-pbG">
-            <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-            <nil key="textColor"/>
-            <nil key="highlightedColor"/>
-            <point key="canvasLocation" x="200" y="-19"/>
-        </label>
     </objects>
     <resources>
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>

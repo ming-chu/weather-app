@@ -29,6 +29,7 @@ class RecentSearchesViewController: UIViewController {
     }
 
     private func setupInterface() {
+        self.tableView?.register(cell: .searchRecordTableViewCell)
         self.tableView?.dataSource = self
         self.tableView?.delegate = self
     }
@@ -47,16 +48,27 @@ extension RecentSearchesViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let record = self.presenter?.searchRecords[indexPath.row] else { return UITableViewCell() }
-
-        let cell = UITableViewCell()
-        cell.backgroundColor = .red
-        cell.textLabel?.text = record.searchType
-        return cell
+        let viewModel = SearchRecordViewModel(searchRecord: record)
+        if let cell = tableView.dequeueReusableCell(withIdentifier: AppCell.searchRecordTableViewCell.reuseIdentifier) as? SearchRecordTableViewCell {
+            cell.setupCell(viewModel: viewModel, delegate: self)
+            return cell
+        }
+        return UITableViewCell()
     }
 }
 
 extension RecentSearchesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+}
+
+extension RecentSearchesViewController: SearchRecordTableViewCellDelegate {
+    func requestDeleteRecord(recordId: String) {
+        //TODO:
+    }
+
+    func requestPerformSearch(recordId: String) {
+        //TODO:
     }
 }
