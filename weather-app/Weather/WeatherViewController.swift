@@ -58,6 +58,12 @@ class WeatherViewController: UIViewController {
             })
             .disposed(by: self.disposeBag)
 
+        searchBar?.rx.searchButtonClicked
+            .subscribe(onNext: { [weak self] (_) in
+                self?.searchBar?.resignFirstResponder()
+            })
+            .disposed(by: self.disposeBag)
+
         // observe the GPS search button event to trigger a "Weather Search" using GPS
         gpsSearchButton?.rx.controlEvent(.touchUpInside)
             .throttle(RxTimeInterval.seconds(2), scheduler: MainScheduler.instance)
