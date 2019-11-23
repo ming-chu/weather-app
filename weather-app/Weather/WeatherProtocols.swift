@@ -13,7 +13,7 @@ import CoreLocation
 
 //MARK: Wireframe -
 protocol WeatherWireframeProtocol: class {
-
+    func presentOpenAppSettingsConfirmation()
 }
 //MARK: Presenter -
 protocol WeatherPresenterProtocol: class {
@@ -41,6 +41,8 @@ protocol WeatherInteractorInputProtocol: class {
 
     /* Presenter -> Interactor */
     var latestLocation: CLLocation? { get }
+    var locationAuthorized: Bool { get }
+    var locationAuthorizationStatus: CLAuthorizationStatus? { get }
     func fetchCurrentWeather(queryType: QueryType)
 }
 

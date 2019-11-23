@@ -22,6 +22,8 @@ class WeatherInteractor: WeatherInteractorInputProtocol {
     private let disposeBag = DisposeBag()
 
     private (set) var latestLocation: CLLocation?
+    private (set) var locationAuthorized: Bool = false
+    private (set) var locationAuthorizationStatus: CLAuthorizationStatus?
 
     init() {
         self.initLocationService()
@@ -67,7 +69,11 @@ class WeatherInteractor: WeatherInteractorInputProtocol {
             .disposed(by: self.disposeBag)
 
         locationManager.rx.didChangeAuthorization
-            .subscribe(onNext: {_, status in
+            .subscribe(onNext: { [weak self] _, status in
+                guard let `self` = self else { return }
+                self.locationAuthorizationStatus = status
+                self.locationAuthorized = [.authorizedAlways, .authorizedWhenInUse].contains(status)
+
                 switch status {
                 case .denied:
                     logger.debug("Authorization denied")

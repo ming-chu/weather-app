@@ -30,6 +30,13 @@ class WeatherPresenter: WeatherPresenterProtocol {
     }
 
     func requestGPSWeatherSearch() {
+        guard self.interactor?.locationAuthorized == true else {
+            if let status = self.interactor?.locationAuthorizationStatus, status == .denied {
+                // request User config GPS in settings
+                self.router.presentOpenAppSettingsConfirmation()
+            }
+            return
+        }
         guard let currentLocation = self.interactor?.latestLocation else { return }
         let queryType = QueryType.coordinates(lat: currentLocation.coordinate.latitude, lon: currentLocation.coordinate.longitude)
         interactor?.fetchCurrentWeather(queryType: queryType)

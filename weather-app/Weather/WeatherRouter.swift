@@ -14,6 +14,17 @@ class WeatherRouter: WeatherWireframeProtocol {
 
     weak var viewController: UIViewController?
 
+    private var openSettingsAlertActionSheet: UIAlertController {
+        let message = "Need GPS permisson to perform GPS search, config it now?"
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak self] (action) in
+            self?.presentAppSettings()
+        }))
+        alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+        return alert
+    }
+
+
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = WeatherViewController(nibName: nil, bundle: nil)
@@ -26,5 +37,16 @@ class WeatherRouter: WeatherWireframeProtocol {
         router.viewController = view
 
         return view
+    }
+
+    private func presentAppSettings() {
+        if let appSettings = URL(string: UIApplication.openSettingsURLString) {
+            UIApplication.shared.open(appSettings, options: [:], completionHandler: nil)
+        }
+    }
+
+    // MARK: - WeatherWireframeProtocol
+    func presentOpenAppSettingsConfirmation() {
+        self.viewController?.present(openSettingsAlertActionSheet, animated: true, completion: nil)
     }
 }
