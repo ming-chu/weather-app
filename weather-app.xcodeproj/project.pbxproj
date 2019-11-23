@@ -190,6 +190,15 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		0A3ABA6B23894A7D001C3938 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				0AB663C523857EE10092F5EF /* Weather */,
+				0A2914382388021E00B2B4BF /* RecentSearches */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 		0A4E5B632388E7CA002BDA31 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,8 +262,7 @@
 				0AA37FC42386D3C3001C6E14 /* Network */,
 				0AB663D82385948F0092F5EF /* Extensions */,
 				0A0D4C3D2387AA1200A4A5FA /* Managers */,
-				0AB663C523857EE10092F5EF /* Weather */,
-				0A2914382388021E00B2B4BF /* RecentSearches */,
+				0A3ABA6B23894A7D001C3938 /* Modules */,
 				0AB663A323857EC90092F5EF /* AppDelegate.swift */,
 				0AB663A523857EC90092F5EF /* SceneDelegate.swift */,
 				0AB663A723857EC90092F5EF /* ViewController.swift */,
