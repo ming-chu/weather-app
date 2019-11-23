@@ -14,6 +14,7 @@ import MaterialComponents.MaterialSnackbar
 class RecentSearchesViewController: UIViewController {
 
     @IBOutlet private weak var tableView: UITableView?
+    @IBOutlet private weak var emptyRecordsPlaceholderLable: UILabel?
 
     @IBAction func closeButtonDidPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -44,6 +45,7 @@ extension RecentSearchesViewController: RecentSearchesViewProtocol {
     }
 
     func updateSearchHistory(records: [SearchRecord]) {
+        self.emptyRecordsPlaceholderLable?.isHidden = records.count > 0
         self.tableView?.reloadData()
     }
 }
