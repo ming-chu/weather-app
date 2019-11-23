@@ -13,4 +13,25 @@ import UIKit
 class RecentSearchesInteractor: RecentSearchesInteractorInputProtocol {
 
     weak var presenter: RecentSearchesInteractorOutputProtocol?
+
+    private let searchHistoryManager: SearchHistoryManager
+
+    init(searchHistoryManager: SearchHistoryManager = .shared) {
+        self.searchHistoryManager = searchHistoryManager
+    }
+    
+    func requestFetchHistoryService() {
+        let records = searchHistoryManager.getRecords()
+        self.presenter?.fetchSearchHistoryDidSuccess(records: records)
+    }
+
+    func removeSearchRecord(record: SearchRecord) {
+        self.searchHistoryManager.removeRecord(record: record)
+    }
+
+    func removeAllSearchRecord() {
+        self.searchHistoryManager.cleanRecords()
+    }
+
+    
 }

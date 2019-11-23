@@ -19,9 +19,10 @@ protocol RecentSearchesPresenterProtocol: class {
 
     var interactor: RecentSearchesInteractorInputProtocol? { get set }
 
+    var searchRecords: [SearchRecord] { get }
     func requestFetchSearchHistory()
-    func removeSearchRecord(record: SearchRecord)
-    func removeAllSearchRecord()
+    func requestRemoveSearchRecord(record: SearchRecord)
+    func requestRemoveAllSearchRecord()
 }
 
 //MARK: Interactor -
@@ -38,6 +39,8 @@ protocol RecentSearchesInteractorInputProtocol: class {
 
     /* Presenter -> Interactor */
     func requestFetchHistoryService()
+    func removeSearchRecord(record: SearchRecord)
+    func removeAllSearchRecord()
 }
 
 //MARK: View -

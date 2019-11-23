@@ -10,7 +10,7 @@
 
 import UIKit
 
-class RecentSearchesViewController: UIViewController, RecentSearchesViewProtocol {
+class RecentSearchesViewController: UIViewController {
 
     @IBOutlet private weak var tableView: UITableView?
 
@@ -24,6 +24,8 @@ class RecentSearchesViewController: UIViewController, RecentSearchesViewProtocol
         super.viewDidLoad()
 
         self.setupInterface()
+
+        self.presenter?.requestFetchSearchHistory()
     }
 
     private func setupInterface() {
@@ -32,16 +34,29 @@ class RecentSearchesViewController: UIViewController, RecentSearchesViewProtocol
     }
 }
 
+extension RecentSearchesViewController: RecentSearchesViewProtocol {
+    func updateSearchHistory(records: [SearchRecord]) {
+        self.tableView?.reloadData()
+    }
+}
+
 extension RecentSearchesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.presenter?.searchRecords.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let record = self.presenter?.searchRecords[indexPath.row] else { return UITableViewCell() }
+
+        let cell = UITableViewCell()
+        cell.backgroundColor = .red
+        cell.textLabel?.text = record.searchType
+        return cell
     }
 }
 
 extension RecentSearchesViewController: UITableViewDelegate {
-
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
 }

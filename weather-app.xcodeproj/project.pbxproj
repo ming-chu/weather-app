@@ -21,6 +21,10 @@
 		0A2914482388023700B2B4BF /* RecentSearchesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A29143D2388023700B2B4BF /* RecentSearchesInteractor.swift */; };
 		0A2914492388023700B2B4BF /* RecentSearchesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A29143E2388023700B2B4BF /* RecentSearchesViewController.xib */; };
 		0A29144A2388023700B2B4BF /* RecentSearchesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A29143E2388023700B2B4BF /* RecentSearchesViewController.xib */; };
+		0A4E5B5C2388DCB2002BDA31 /* SearchRecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E5B5A2388DCB2002BDA31 /* SearchRecordTableViewCell.swift */; };
+		0A4E5B5D2388DCB2002BDA31 /* SearchRecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E5B5A2388DCB2002BDA31 /* SearchRecordTableViewCell.swift */; };
+		0A4E5B5E2388DCB2002BDA31 /* SearchRecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A4E5B5B2388DCB2002BDA31 /* SearchRecordTableViewCell.xib */; };
+		0A4E5B5F2388DCB2002BDA31 /* SearchRecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A4E5B5B2388DCB2002BDA31 /* SearchRecordTableViewCell.xib */; };
 		0AA37FC62386D3D9001C6E14 /* WebServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA37FC52386D3D9001C6E14 /* WebServiceManager.swift */; };
 		0AA37FC72386D3D9001C6E14 /* WebServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA37FC52386D3D9001C6E14 /* WebServiceManager.swift */; };
 		0AA37FCA2386D444001C6E14 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA37FC92386D444001C6E14 /* Logger.swift */; };
@@ -74,6 +78,8 @@
 		0A29143C2388023700B2B4BF /* RecentSearchesProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchesProtocols.swift; sourceTree = "<group>"; };
 		0A29143D2388023700B2B4BF /* RecentSearchesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchesInteractor.swift; sourceTree = "<group>"; };
 		0A29143E2388023700B2B4BF /* RecentSearchesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentSearchesViewController.xib; sourceTree = "<group>"; };
+		0A4E5B5A2388DCB2002BDA31 /* SearchRecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecordTableViewCell.swift; sourceTree = "<group>"; };
+		0A4E5B5B2388DCB2002BDA31 /* SearchRecordTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchRecordTableViewCell.xib; sourceTree = "<group>"; };
 		0AA37FC52386D3D9001C6E14 /* WebServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceManager.swift; sourceTree = "<group>"; };
 		0AA37FC92386D444001C6E14 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		0AA37FCD2386D4B4001C6E14 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
@@ -150,6 +156,8 @@
 		0A29144B2388047C00B2B4BF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0A4E5B5A2388DCB2002BDA31 /* SearchRecordTableViewCell.swift */,
+				0A4E5B5B2388DCB2002BDA31 /* SearchRecordTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -367,6 +375,7 @@
 				0A2914492388023700B2B4BF /* RecentSearchesViewController.xib in Resources */,
 				0AB663D623857EF90092F5EF /* WeatherViewController.xib in Resources */,
 				0AB663AD23857ECA0092F5EF /* Assets.xcassets in Resources */,
+				0A4E5B5E2388DCB2002BDA31 /* SearchRecordTableViewCell.xib in Resources */,
 				0AB663AB23857EC90092F5EF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A29144A2388023700B2B4BF /* RecentSearchesViewController.xib in Resources */,
+				0A4E5B5F2388DCB2002BDA31 /* SearchRecordTableViewCell.xib in Resources */,
 				0AB663D723857EF90092F5EF /* WeatherViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,6 +473,7 @@
 				0AB663D023857EF90092F5EF /* WeatherViewController.swift in Sources */,
 				0AB663CE23857EF90092F5EF /* WeatherRouter.swift in Sources */,
 				0A2914472388023700B2B4BF /* RecentSearchesInteractor.swift in Sources */,
+				0A4E5B5C2388DCB2002BDA31 /* SearchRecordTableViewCell.swift in Sources */,
 				0AB663CC23857EF90092F5EF /* WeatherPresenter.swift in Sources */,
 				0AA37FCE2386D4B4001C6E14 /* WeatherResponse.swift in Sources */,
 				0AB663A423857EC90092F5EF /* AppDelegate.swift in Sources */,
@@ -493,6 +504,7 @@
 				0AB663CF23857EF90092F5EF /* WeatherRouter.swift in Sources */,
 				0AB663D523857EF90092F5EF /* WeatherInteractor.swift in Sources */,
 				0A2914422388023700B2B4BF /* RecentSearchesRouter.swift in Sources */,
+				0A4E5B5D2388DCB2002BDA31 /* SearchRecordTableViewCell.swift in Sources */,
 				0A2914482388023700B2B4BF /* RecentSearchesInteractor.swift in Sources */,
 				0AA37FD82386DA12001C6E14 /* QueryType.swift in Sources */,
 				0AB663DB238594B60092F5EF /* Extensions.swift in Sources */,

@@ -40,7 +40,7 @@ struct SearchRecord: Codable, Equatable {
         }
     }
 
-    static func == (lhs: Self, rhs: Self) -> Bool {
+    static func == (lhs: SearchRecord, rhs: SearchRecord) -> Bool {
         return lhs.recordId == rhs.recordId
     }
 }

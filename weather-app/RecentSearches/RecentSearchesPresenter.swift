@@ -10,11 +10,13 @@
 
 import UIKit
 
-class RecentSearchesPresenter: RecentSearchesPresenterProtocol, RecentSearchesInteractorOutputProtocol {
+class RecentSearchesPresenter: RecentSearchesPresenterProtocol {
 
     weak private var view: RecentSearchesViewProtocol?
     var interactor: RecentSearchesInteractorInputProtocol?
     private let router: RecentSearchesWireframeProtocol
+
+    private (set) var searchRecords: [SearchRecord] = []
 
     init(interface: RecentSearchesViewProtocol, interactor: RecentSearchesInteractorInputProtocol?, router: RecentSearchesWireframeProtocol) {
         self.view = interface
@@ -22,4 +24,27 @@ class RecentSearchesPresenter: RecentSearchesPresenterProtocol, RecentSearchesIn
         self.router = router
     }
 
+    // MARK: - RecentSearchesPresenterProtocol
+    func requestFetchSearchHistory() {
+        self.interactor?.requestFetchHistoryService()
+    }
+
+    func requestRemoveSearchRecord(record: SearchRecord) {
+        self.interactor?.removeSearchRecord(record: record)
+    }
+
+    func requestRemoveAllSearchRecord() {
+        self.interactor?.removeAllSearchRecord()
+    }
+}
+
+extension RecentSearchesPresenter: RecentSearchesInteractorOutputProtocol {
+    func fetchSearchHistoryDidSuccess(records: [SearchRecord]) {
+        self.searchRecords = records.reversed()
+        self.view?.updateSearchHistory(records: records)
+    }
+
+    func fetchSearchHistoryDidFailed(error: Error?) {
+        logger.debug("fetchSearchHistoryDidFailed: \(String(describing: error))")
+    }
 }
