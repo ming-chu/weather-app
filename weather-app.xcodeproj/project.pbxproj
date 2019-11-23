@@ -31,6 +31,7 @@
 		0A4E5B662388E7E0002BDA31 /* SearchHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E5B642388E7E0002BDA31 /* SearchHistory.swift */; };
 		0A4E5B682388E7FB002BDA31 /* SearchRecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E5B672388E7FB002BDA31 /* SearchRecordViewModel.swift */; };
 		0A4E5B692388E7FB002BDA31 /* SearchRecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E5B672388E7FB002BDA31 /* SearchRecordViewModel.swift */; };
+		0A4E5B7E23893091002BDA31 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A4E5B8023893091002BDA31 /* InfoPlist.strings */; };
 		0AA37FC62386D3D9001C6E14 /* WebServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA37FC52386D3D9001C6E14 /* WebServiceManager.swift */; };
 		0AA37FC72386D3D9001C6E14 /* WebServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA37FC52386D3D9001C6E14 /* WebServiceManager.swift */; };
 		0AA37FCA2386D444001C6E14 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA37FC92386D444001C6E14 /* Logger.swift */; };
@@ -89,6 +90,13 @@
 		0A4E5B602388E54B002BDA31 /* AppCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCell.swift; sourceTree = "<group>"; };
 		0A4E5B642388E7E0002BDA31 /* SearchHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistory.swift; sourceTree = "<group>"; };
 		0A4E5B672388E7FB002BDA31 /* SearchRecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecordViewModel.swift; sourceTree = "<group>"; };
+		0A4E5B7A23893060002BDA31 /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-AU"; path = "en-AU.lproj/Main.strings"; sourceTree = "<group>"; };
+		0A4E5B7B23893060002BDA31 /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-AU"; path = "en-AU.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		0A4E5B7F23893091002BDA31 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0A4E5B8123893096002BDA31 /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-AU"; path = "en-AU.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		0A4E5B8223893255002BDA31 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Main.strings"; sourceTree = "<group>"; };
+		0A4E5B8323893255002BDA31 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		0A4E5B8423893255002BDA31 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		0AA37FC52386D3D9001C6E14 /* WebServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceManager.swift; sourceTree = "<group>"; };
 		0AA37FC92386D444001C6E14 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		0AA37FCD2386D4B4001C6E14 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
@@ -252,6 +260,7 @@
 				0AB663AC23857ECA0092F5EF /* Assets.xcassets */,
 				0AB663AE23857ECA0092F5EF /* LaunchScreen.storyboard */,
 				0AB663B123857ECA0092F5EF /* Info.plist */,
+				0A4E5B8023893091002BDA31 /* InfoPlist.strings */,
 			);
 			path = "weather-app";
 			sourceTree = "<group>";
@@ -374,6 +383,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"en-AU",
+				"zh-HK",
 			);
 			mainGroup = 0AB6639723857EC90092F5EF;
 			productRefGroup = 0AB663A123857EC90092F5EF /* Products */;
@@ -392,6 +403,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AB663B023857ECA0092F5EF /* LaunchScreen.storyboard in Resources */,
+				0A4E5B7E23893091002BDA31 /* InfoPlist.strings in Resources */,
 				0A2914492388023700B2B4BF /* RecentSearchesViewController.xib in Resources */,
 				0AB663D623857EF90092F5EF /* WeatherViewController.xib in Resources */,
 				0AB663AD23857ECA0092F5EF /* Assets.xcassets in Resources */,
@@ -548,10 +560,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0A4E5B8023893091002BDA31 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0A4E5B7F23893091002BDA31 /* en */,
+				0A4E5B8123893096002BDA31 /* en-AU */,
+				0A4E5B8423893255002BDA31 /* zh-HK */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		0AB663A923857EC90092F5EF /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				0AB663AA23857EC90092F5EF /* Base */,
+				0A4E5B7A23893060002BDA31 /* en-AU */,
+				0A4E5B8223893255002BDA31 /* zh-HK */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -560,6 +584,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				0AB663AF23857ECA0092F5EF /* Base */,
+				0A4E5B7B23893060002BDA31 /* en-AU */,
+				0A4E5B8323893255002BDA31 /* zh-HK */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -571,6 +597,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -631,6 +658,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

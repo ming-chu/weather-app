@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  weather-app
+
+  Created by Ming Chu on 23/11/2019.
+  Copyright © 2019 vegantell. All rights reserved.
+*/
+
+"NSLocationWhenInUseUsageDescription" = "Help search weather with your location :)";
+"CFBundleName" = "My Aussie Weather";
