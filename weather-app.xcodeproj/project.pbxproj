@@ -214,6 +214,7 @@
 				0AA37FC82386D437001C6E14 /* Logger */,
 				0AA37FC42386D3C3001C6E14 /* Network */,
 				0AB663D82385948F0092F5EF /* Extensions */,
+				0A0D4C3D2387AA1200A4A5FA /* Managers */,
 				0AB663C523857EE10092F5EF /* Weather */,
 				0A2914382388021E00B2B4BF /* RecentSearches */,
 				0AB663A323857EC90092F5EF /* AppDelegate.swift */,
@@ -239,7 +240,6 @@
 		0AB663C523857EE10092F5EF /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				0A0D4C3D2387AA1200A4A5FA /* Managers */,
 				0AA37FCC2386D4A3001C6E14 /* Models */,
 				0AB663C623857EF90092F5EF /* WeatherPresenter.swift */,
 				0AB663C723857EF90092F5EF /* WeatherRouter.swift */,
