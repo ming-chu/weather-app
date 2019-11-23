@@ -41,6 +41,10 @@ class WeatherViewController: UIViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.recentSearchesButton?.roundCorners(corners: .allCorners, radius: 10)
+        self.weatherWidgetView?.roundCorners(corners: .allCorners, radius: 10)
+        self.searchBar?.roundCorners(corners: .allCorners, radius: 10)
+
         self.setInterface(viewModel: nil)
         self.searchBar?.rx.text.asDriver().drive(searchText).disposed(by: self.disposeBag)
 
