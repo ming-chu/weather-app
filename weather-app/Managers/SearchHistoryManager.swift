@@ -27,7 +27,7 @@ class SearchHistoryManager {
         self.store()
     }
 
-    func getRecords() -> [SearchRecord] {
+    func getAllRecords() -> [SearchRecord] {
         return searchHistory.searchRecords
     }
 

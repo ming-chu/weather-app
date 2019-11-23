@@ -21,7 +21,7 @@ class RecentSearchesInteractor: RecentSearchesInteractorInputProtocol {
     }
     
     func requestFetchHistoryService() {
-        let records = searchHistoryManager.getRecords()
+        let records = searchHistoryManager.getAllRecords()
         self.presenter?.fetchSearchHistoryDidSuccess(records: records)
     }
 

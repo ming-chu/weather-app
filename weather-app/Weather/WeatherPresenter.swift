@@ -36,7 +36,7 @@ class WeatherPresenter: WeatherPresenterProtocol {
     }
 
     func requestWeatherForMostRecentSearch() {
-        guard let lastQueryType = SearchHistoryManager.shared.getRecords().last?.queryType else {
+        guard let lastQueryType = SearchHistoryManager.shared.getAllRecords().last?.queryType else {
             if self.interactor?.latestLocation != nil {
                 requestGPSWeatherSearch()
             } else {
