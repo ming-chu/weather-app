@@ -18,12 +18,18 @@ protocol RecentSearchesWireframeProtocol: class {
 protocol RecentSearchesPresenterProtocol: class {
 
     var interactor: RecentSearchesInteractorInputProtocol? { get set }
+
+    func requestFetchSearchHistory()
+    func removeSearchRecord(record: SearchRecord)
+    func removeAllSearchRecord()
 }
 
 //MARK: Interactor -
 protocol RecentSearchesInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func fetchSearchHistoryDidSuccess(records: [SearchRecord])
+    func fetchSearchHistoryDidFailed(error: Error?)
 }
 
 protocol RecentSearchesInteractorInputProtocol: class {
@@ -31,6 +37,7 @@ protocol RecentSearchesInteractorInputProtocol: class {
     var presenter: RecentSearchesInteractorOutputProtocol?  { get set }
 
     /* Presenter -> Interactor */
+    func requestFetchHistoryService()
 }
 
 //MARK: View -
@@ -39,4 +46,5 @@ protocol RecentSearchesViewProtocol: class {
     var presenter: RecentSearchesPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func updateSearchHistory(records: [SearchRecord])
 }
