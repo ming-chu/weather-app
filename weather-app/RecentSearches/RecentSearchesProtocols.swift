@@ -14,6 +14,7 @@ import Foundation
 protocol RecentSearchesWireframeProtocol: class {
     func presentSearch(record: SearchRecord)
 }
+
 //MARK: Presenter -
 protocol RecentSearchesPresenterProtocol: class {
 
@@ -32,6 +33,7 @@ protocol RecentSearchesInteractorOutputProtocol: class {
     /* Interactor -> Presenter */
     func fetchSearchHistoryDidSuccess(records: [SearchRecord])
     func fetchSearchHistoryDidFailed(error: Error?)
+    func removeSearchRecordDidSuccess()
 }
 
 protocol RecentSearchesInteractorInputProtocol: class {
@@ -51,4 +53,5 @@ protocol RecentSearchesViewProtocol: class {
 
     /* Presenter -> ViewController */
     func updateSearchHistory(records: [SearchRecord])
+    func showSnackbarMessage(message: String)
 }

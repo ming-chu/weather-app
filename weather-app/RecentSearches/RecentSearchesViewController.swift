@@ -9,6 +9,7 @@
 //
 
 import UIKit
+import MaterialComponents.MaterialSnackbar
 
 class RecentSearchesViewController: UIViewController {
 
@@ -36,6 +37,12 @@ class RecentSearchesViewController: UIViewController {
 }
 
 extension RecentSearchesViewController: RecentSearchesViewProtocol {
+    func showSnackbarMessage(message: String) {
+        let snackbarMessage = MDCSnackbarMessage()
+        snackbarMessage.text = message
+        MDCSnackbarManager.show(snackbarMessage)
+    }
+
     func updateSearchHistory(records: [SearchRecord]) {
         self.tableView?.reloadData()
     }

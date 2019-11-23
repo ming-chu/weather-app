@@ -13,6 +13,7 @@ target 'weather-app' do
   pod 'RxCocoa'
   pod 'IQKeyboardManager'
   pod 'RxCoreLocation', '~> 1.4'
+  pod 'MaterialComponents/Snackbar'
   
   target 'weather-appTests' do
     inherit! :search_paths
