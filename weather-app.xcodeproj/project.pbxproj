@@ -45,8 +45,6 @@
 		0AA37FD82386DA12001C6E14 /* QueryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA37FD62386DA12001C6E14 /* QueryType.swift */; };
 		0AB663A423857EC90092F5EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB663A323857EC90092F5EF /* AppDelegate.swift */; };
 		0AB663A623857EC90092F5EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB663A523857EC90092F5EF /* SceneDelegate.swift */; };
-		0AB663A823857EC90092F5EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB663A723857EC90092F5EF /* ViewController.swift */; };
-		0AB663AB23857EC90092F5EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AB663A923857EC90092F5EF /* Main.storyboard */; };
 		0AB663AD23857ECA0092F5EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AB663AC23857ECA0092F5EF /* Assets.xcassets */; };
 		0AB663B023857ECA0092F5EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AB663AE23857ECA0092F5EF /* LaunchScreen.storyboard */; };
 		0AB663BB23857ECA0092F5EF /* weather_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB663BA23857ECA0092F5EF /* weather_appTests.swift */; };
@@ -91,11 +89,9 @@
 		0A4E5B602388E54B002BDA31 /* AppCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCell.swift; sourceTree = "<group>"; };
 		0A4E5B642388E7E0002BDA31 /* SearchHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistory.swift; sourceTree = "<group>"; };
 		0A4E5B672388E7FB002BDA31 /* SearchRecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecordViewModel.swift; sourceTree = "<group>"; };
-		0A4E5B7A23893060002BDA31 /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-AU"; path = "en-AU.lproj/Main.strings"; sourceTree = "<group>"; };
 		0A4E5B7B23893060002BDA31 /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-AU"; path = "en-AU.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		0A4E5B7F23893091002BDA31 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0A4E5B8123893096002BDA31 /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-AU"; path = "en-AU.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		0A4E5B8223893255002BDA31 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Main.strings"; sourceTree = "<group>"; };
 		0A4E5B8323893255002BDA31 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		0A4E5B8423893255002BDA31 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		0A4E5B9523893EA7002BDA31 /* MockUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserDefaults.swift; sourceTree = "<group>"; };
@@ -107,8 +103,6 @@
 		0AB663A023857EC90092F5EF /* weather-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "weather-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AB663A323857EC90092F5EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AB663A523857EC90092F5EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0AB663A723857EC90092F5EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0AB663AA23857EC90092F5EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0AB663AC23857ECA0092F5EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0AB663AF23857ECA0092F5EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0AB663B123857ECA0092F5EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -265,8 +259,6 @@
 				0A3ABA6B23894A7D001C3938 /* Modules */,
 				0AB663A323857EC90092F5EF /* AppDelegate.swift */,
 				0AB663A523857EC90092F5EF /* SceneDelegate.swift */,
-				0AB663A723857EC90092F5EF /* ViewController.swift */,
-				0AB663A923857EC90092F5EF /* Main.storyboard */,
 				0AB663AC23857ECA0092F5EF /* Assets.xcassets */,
 				0AB663AE23857ECA0092F5EF /* LaunchScreen.storyboard */,
 				0AB663B123857ECA0092F5EF /* Info.plist */,
@@ -419,7 +411,6 @@
 				0AB663D623857EF90092F5EF /* WeatherViewController.xib in Resources */,
 				0AB663AD23857ECA0092F5EF /* Assets.xcassets in Resources */,
 				0A4E5B5E2388DCB2002BDA31 /* SearchRecordTableViewCell.xib in Resources */,
-				0AB663AB23857EC90092F5EF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,7 +498,6 @@
 				0AA37FC62386D3D9001C6E14 /* WebServiceManager.swift in Sources */,
 				0AA37FD42386D94A001C6E14 /* WeatherViewModel.swift in Sources */,
 				0AA37FCA2386D444001C6E14 /* Logger.swift in Sources */,
-				0AB663A823857EC90092F5EF /* ViewController.swift in Sources */,
 				0A0D4C3B2387AA0E00A4A5FA /* SearchHistoryManager.swift in Sources */,
 				0A2914432388023700B2B4BF /* RecentSearchesViewController.swift in Sources */,
 				0A2914452388023700B2B4BF /* RecentSearchesProtocols.swift in Sources */,
@@ -582,16 +572,6 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		0AB663A923857EC90092F5EF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0AB663AA23857EC90092F5EF /* Base */,
-				0A4E5B7A23893060002BDA31 /* en-AU */,
-				0A4E5B8223893255002BDA31 /* zh-HK */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0AB663AE23857ECA0092F5EF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -639,7 +619,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -701,7 +681,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

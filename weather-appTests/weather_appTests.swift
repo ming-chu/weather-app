@@ -70,6 +70,55 @@ class weather_appTests: XCTestCase {
         }
     }
 
+    func testRecentSearchesInteractorRemoveAllSearchRecord() {
+        let recordsCount = Int.random(in: 1...1000)
+        print("recordsCount = \(recordsCount)")
+        
+        let searchHistoryManager = createSearchHistoryManagerWithRecords(recordsCount: recordsCount)
+        print("searchHistoryManager.getAllRecords().count = \(searchHistoryManager.getAllRecords().count)")
+
+        let interactor = RecentSearchesInteractor(searchHistoryManager: searchHistoryManager)
+
+        // expected records count is the same even get it from interactor
+        XCTAssert(searchHistoryManager.getAllRecords().count == recordsCount, "expected one record only here.")
+
+        // expected no records after remove all search record via interactor.
+        interactor.removeAllSearchRecord()
+        XCTAssert(searchHistoryManager.getAllRecords().count == 0, "expected no records here.")
+    }
+
+    func testRecentSearchesPresenter() {
+        let recordsCount = Int.random(in: 1...1000)
+        print("recordsCount = \(recordsCount)")
+
+        let searchHistoryManager = createSearchHistoryManagerWithRecords(recordsCount: recordsCount)
+        print("searchHistoryManager.getAllRecords().count = \(searchHistoryManager.getAllRecords().count)")
+
+        let interactor = RecentSearchesInteractor(searchHistoryManager: searchHistoryManager)
+        let view = RecentSearchesViewController(nibName: nil, bundle: nil)
+        let router = RecentSearchesRouter()
+        let presenter = RecentSearchesPresenter(interface: view, interactor: interactor, router: router)
+        presenter.requestFetchSearchHistory()
+
+        // expected the request will be completed in 5 seconds
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            XCTAssert(presenter.searchRecords.count == recordsCount, "the records count should be the same.")
+        }
+    }
+
+    private func createSearchHistoryManagerWithRecords(recordsCount: Int = 10) -> SearchHistoryManager {
+        let searchHistoryManager = SearchHistoryManager(userDefaults: MockUserDefaults())
+
+        for _ in 0 ..< recordsCount {
+            let testingSearchType = QueryTypeName.cityName.rawValue + UUID().uuidString
+            let testingCityName = "London" + UUID().uuidString
+            var record = SearchRecord(searchType: testingSearchType, timestamp: Double(Date().timeIntervalSince1970) + Double.random(in: 0 ..< 10))
+            record.cityName = testingCityName
+            searchHistoryManager.insertRecord(searchRecord: record)
+        }
+        return searchHistoryManager
+    }
+
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
